@@ -1,0 +1,125 @@
+<ion-view title="Request" cache-view="false">
+	<ion-header-bar align-title="center" class="header-bar" no-tap-scroll="false">
+		<!------------------------header-part---------------------------->
+		<div class="header">
+			<div class="header-three-block">
+				<div class="menu-part">
+					<div class="jumbotron">
+						<div class="icon-menu"><a ui-sref="dashboard"> <img src="img/home.png"></a></div>
+					</div>
+				</div>
+				<div class="header-logo"><a href="#">Book Service Request</a></div>
+				<div class="phone"><a href="tel:8601880080"><img src="img/phone.png"></a></div>
+			</div>
+		</div>
+		<!------------------------end header-part---------------------------->
+	</ion-header-bar>
+	<ion-content >
+		<!------------------------book service request---------------------------->
+		<section id="terms" class="middle-blue-bg">
+			<div class="container text-align">
+
+				<!------------------------blue-part---------------------------->
+				<form name="frmRequest" id="frm_book_request" action="http://design.iprojectlab.com/uncleden/app/book_request.php" method="POST" ng-controller="requestController">
+					<div class="blue-part-bg">
+						<div class="service-form">
+							<div class="col-md-12  noPadding">
+								<div class="rw"> <span class="full-name">
+                           <input type="text" placeholder="Full Name" aria-invalid="false" aria-required="true" id="full-name" class="input_bx full-name-txt" size="40" value="" name="full_name">
+                           </span>
+								</div>
+								<div class="rw"> <span class="contact-no">
+                           <input type="text" placeholder="Contact No" aria-invalid="false" aria-required="true" id="contact-no" class="input_bx full-name-txt" size="40" value="" name="contact_no">
+                           </span>
+								</div>
+								<div class="rw"> <span class="email-id">
+                           <input type="text" placeholder="Email" aria-invalid="false" aria-required="true" id="email-id" class="input_bx full-name-txt" size="40" value="" name="email_id">
+                           </span>
+								</div>
+								<div class="rw">
+                           <span class="services-detailling">
+                              <select id="service-type" class="service-type" name="service_type">
+								  <option value="">---</option>
+								  <option value="Plumbing">Plumbing</option>
+								  <option value="Sanitary">Sanitary</option>
+								  <option value="Carpentry">Carpentry</option>
+								  <option value="Electrician">Electrician</option>
+								  <option value="Painting">Painting</option>
+								  <option value="Pest Control">Pest Control</option>
+								  <option value="Duplicate Key Makers">Duplicate Key Makers</option>
+								  <option value="Furniture Restoration">Furniture Restoration</option>
+								  <option value="Electronics Appliances">Electronics Appliances</option>
+								  <option value="Air Conditioner">Air Conditioner</option>
+								  <option value="T.V.(LED)">T.V.(LED)</option>
+								  <option value="Air Cooler">Air Cooler</option>
+								  <option value="Water Cooler">Water Cooler</option>
+								  <option value="Digital Set Top Box">Digital Set Top Box</option>
+								  <option value="Refrigerator">Refrigerator</option>
+								  <option value="Chimney">Chimney</option>
+								  <option value="Washing Machine">Washing Machine</option>
+								  <option value="Microwave Oven">Microwave Oven</option>
+								  <option value="Electric Cooking System">Electric Cooking System</option>
+								  <option value="Water Purifier">Water Purifier</option>
+								  <option value="Computer & Laptop">Computer & Laptop</option>
+							  </select>
+                           </span>
+								</div>
+							</div>
+							<div class="col-md-12  noPadding">
+								<div class="col-md-6 col-sm-6 noPadding">
+									<div class="rw">
+                              <span class="preffered-date">
+                                 <!--<input type="date" id="datepicker" placeholder="Preferred Date" name="service-date">-->
+                                 <input type="text" id="datepicker" placeholder="Preferred Date" name="service_date"  ng-click="datePickerStartDate()" readonly>
+                              </span>
+									</div>
+									<div class="rw"><span class="preffered-time">
+                              	<!--<input id="service-time" class="hasTimepicker"  name="service_time" type="time" placeholder="Preferred Time">-->
+										<input type="time" id="service-time" name="input" ng-model="example.value"
+											   placeholder="HH:mm:ss" />
+
+                              </span>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 noPadding clear">
+									<div class="rw"> <span class="area">
+                              <input type="text" placeholder="Area" aria-invalid="false" aria-required="true" id="area" class="input_bx area" size="40" value="" name="area">
+                              </span>
+									</div>
+									<div class="rw custom-file-upload">
+										<span class="uplaod-text">Upload Photo</span><span class="upload-photo">
+                              <input type="file" aria-invalid="false" aria-required="true" id="btnupload_0" name="btnupload_0" class="upload_photo upload" size="40" name="upload-photo">
+                              </span>
+										<div class="uploaded-img"> <img alt="" id="uploaded_img_0" name="uploaded_img_0" src="img/placeholder.png"> </div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="rw term_condition_cont"> <span class="chk-term-condition"><span id="chk_term_condition" class="chk_term_condition css-checkbox"><span class="first last">
+                           <input type="checkbox" class="css-checkbox" value="I agree to be contacted by UncleDen in order to receive further information about partnering with UncleDen."  id="checkbox" >
+                           <label class="css-label" for="checkbox"> &nbsp;<span class="list-item-label">I agree to be contacted by UncleDen in order to receive further information about partnering with UncleDen.</span></label>
+                           </span></span></span>
+								</div>
+								<div class="rw btn_cont">
+									<input type="button" id="btn_sendmessage" class="btn_sendmessage" value="Send Message" ng-click="request_form()">
+								</div>
+							</div>
+						</div>
+					</div>
+					<input type="hidden" class="hid_uploaded" id="hid_uploaded_img_0" name="hid_uploaded_img_0" />
+				</form>
+				<div class="call-on">
+					<span>Want to contact UncleDen? Call on</span>
+					<div class="call-part"><a class="call-no" href="tel:8601880080">8601 88 00 80<span>(Toll Free)</span></a></div>
+				</div>
+			</div>
+			</div>
+			<!------------------------end blue-part---------------------------->
+			<!------------------------follow-part---------------------------->
+			<div class="follow-us">
+				<div class="follow"> <span>Follow UncleDen on</span> <a href="http://www.facebook.com"><i class="fa fa-facebook"></i> </a> <a href="http://www.twitter.com"><i class="fa fa-twitter"></i> </a> </div>
+			</div>
+			<!------------------------end follow-part---------------------------->
+		</section>
+		<!------------------------end book service request---------------------------->
+	</ion-content>
+</ion-view>
